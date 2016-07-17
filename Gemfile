@@ -38,6 +38,10 @@ gem 'seed_dump'
 # font awesome
 gem 'font-awesome-rails', '4.3.0.0'
 
+# bootstrap導入
+gem 'bootstrap-sass'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
