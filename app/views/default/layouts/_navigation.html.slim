@@ -2,17 +2,6 @@
   .sidebar-nav.navbar-collapse
     ul#side-menu.nav
       li
-        a href="index.html"
-          i.fa.fa-dashboard.fa-fw
-          | Dashboard
-        /! /.nav-second-level
+        = link_to "ホーム", root_path
       li
-        a href="#"
-          i.fa.fa-files-o.fa-fw
-          | Sample Pages
-          span.fa.arrow
-        ul.nav.nav-second-level
-          li
-            a href="blank.html"  Blank Page
-          li
-            a href="login.html"  Login Page
+        = mail_to "example@example.com", "お問い合わせ"
