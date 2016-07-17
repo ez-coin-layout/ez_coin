@@ -3,13 +3,13 @@ html
   head
     meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    title EZ-coin | Admin
-    = stylesheet_link_tag    'admin/application', media: 'all'
-    = javascript_include_tag 'admin/application'
+    title EZ-coin
+    = stylesheet_link_tag    'default/application', media: 'all'
+    = javascript_include_tag 'default/application'
     = csrf_meta_tags
   body
     #wrapper
       nav.navbar.navbar-default.navbar-static-top role="navigation" style="margin-bottom: 0"
-        = render 'admin/layouts/topnavbar'
-        = render 'admin/layouts/navigation'
-      = yield
+        = render 'default/layouts/topnavbar'
+      #page-wrapper style="margin: 0;"
+        = yield
