@@ -1,0 +1,20 @@
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// Variables, Mixins
+@import "metisMenu.min";
+@import "timeline";
+@import "clocks";
+@import "dataTables.bootstrap";
+@import "sb-admin-2";
+@import "morris-0.4.3.min";
+@import "font-awesome";
+@import "social-buttons";
+
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
