@@ -4,6 +4,7 @@
 
 /vendor/bundle
 /.vagrant
+/Vagrantfile
 .DS_Store
 .byebug_history
 /public/system
