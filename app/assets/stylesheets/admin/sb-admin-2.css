@@ -5,7 +5,7 @@
  */
 
 body {
-    background-color: #f8f8f8;
+    background-color: #3a6386;
 }
 
 #wrapper {
@@ -354,4 +354,16 @@ table.dataTable thead .sorting:after {
 
 .panel-yellow a:hover {
     color: #f69302;
+}
+
+.navbar-default {
+  background-color: #3a6386;
+}
+
+.navbar-brand {
+  color:#fff !important;
+}
+
+.link-color {
+  color: #fff;
 }
