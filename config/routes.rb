@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :default do
-    get 'home/index'
+  get 'home/index'
+  get 'action/index'
   end
+  
 
   namespace :admin do
     root to: 'home#index'
