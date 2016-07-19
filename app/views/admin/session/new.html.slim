@@ -1,0 +1,17 @@
+  #page-wrapper
+    .row
+      .col-lg-12
+        h2.page-header Login
+        = form_for(@manager, url: admin_sign_in_path, method: :post) do |f|
+          - if flash[:error]
+            #error_explanation
+              p ユーザー名またはパスワードが違います
+          = hidden_field_tag :referer, flash[:referer]
+          .field
+            = f.label :username
+            = f.text_field :username
+          .field
+            = f.label :password
+            = f.password_field :password
+          .actions
+            = f.submit
