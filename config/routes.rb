@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   namespace :default do
     get 'home/index'
     get 'action/index'
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
+    resources :managers
     get 'deposit_requests' => 'deposit_requests#index'
     root to: 'home#index'
   end
