@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :managers
     resources :deposit_records, only: [:index, :show]
     resources :deposit_requests, only: [:index, :create, :destroy]
+    get    'user'     => 'user#index'
     get    'sign_in'  => 'session#new'
     post   'sign_in'  => 'session#create'
     delete 'sign_out' => 'session#destroy'

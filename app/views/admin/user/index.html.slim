@@ -1,0 +1,21 @@
+  #page-wrapper
+    .row
+      .col-lg-12
+        h2.page-header ユーザ一覧
+        table
+          thead
+            tr
+              th email
+              th 会員番号
+              th サイト
+              th 所持ポイント
+              th 登録日
+
+          tbody
+            - @users.each do |user|
+              tr
+                td = user.email
+                td = user.ezid
+                td = user.via_site
+                td = user.total_point
+                td = local_time user.created_at
