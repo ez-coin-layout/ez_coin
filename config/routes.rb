@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :managers
+    resources :deposit_records, only: [:index, :show]
     get    'deposit_requests' => 'deposit_requests#index'
     get    'sign_in'  => 'session#new'
     post   'sign_in'  => 'session#create'

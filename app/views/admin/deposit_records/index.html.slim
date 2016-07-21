@@ -1,0 +1,32 @@
+  #page-wrapper
+    .row
+      .col-lg-12
+        h2.page-header 入金履歴
+    .row
+      .col-lg-12
+        .panel.panel-default
+          .panel-heading
+            | 履歴一覧
+          .panel-body
+            .table-responsive
+              table.table.table-striped
+                thead
+                  tr
+                    th email
+                    th 会員番号
+                    th 入金処理額
+                    th 付与PT
+                    th 決済方法
+                    th 処理日時
+                    th
+
+                tbody
+                  - @deposit_records.each do |deposit_record|
+                    tr
+                      td = deposit_record.user.email
+                      td = deposit_record.user.ezid
+                      td = deposit_record.amount
+                      td = deposit_record.add_point
+                      td = deposit_record.deposit_method
+                      td = deposit_record.created_at
+                      td = link_to 'Show', admin_deposit_record
