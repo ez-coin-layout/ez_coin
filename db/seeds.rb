@@ -9,5 +9,5 @@ Default::DepositRequest.create!([
   {user_id: 1, amount: 100000, status: "0", request_point: 10000}
 ])
 Default::User.create!([
-  {email: "hoge@hoge.com", ezid: "hogehoge", password_digest: "$2a$10$6m9GW.n4XkFK6TIEZS5Hr./qfQd3bR1L889aYftvwQsuNOgPU0hYK", total_point: 0, via_site: "0"}
+  {email: "os18700241@gmail.com", ezid: "hogehoge", password_digest: "$2a$10$6m9GW.n4XkFK6TIEZS5Hr./qfQd3bR1L889aYftvwQsuNOgPU0hYK", total_point: 0, via_site: "0"}
 ])

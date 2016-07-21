@@ -14,7 +14,7 @@ module Admin
         @deposit_request.update_attribute(:status, true)
         total = @user.total_point + deposit_params[:add_point].to_i
         @user.update_attribute(:total_point, total)
-        # *ここにメール送信内容を追加*
+        DepositMailer.send_when_deposit(@user).deliver
         redirect_to admin_deposit_requests_path
       else
         flash[:error] = "入金処理に失敗しました"
