@@ -28,5 +28,5 @@
                       td = deposit_record.amount
                       td = deposit_record.add_point
                       td = deposit_record.deposit_method
-                      td = deposit_record.created_at
-                      td = link_to 'Show', admin_deposit_record
+                      td = local_time deposit_record.created_at
+                      td = link_to 'Show', admin_deposit_record_path(deposit_record.id)

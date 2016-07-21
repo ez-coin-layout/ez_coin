@@ -5,6 +5,10 @@
     .row
       .col-lg-12
         .panel.panel-default
+          - if @deposit_record.present? && @deposit_record.errors.any?
+            ul
+              - @deposit_record.errors.full_messages.each do |message|
+                li = message
           .panel-heading
             | リクエスト一覧
           .panel-body
@@ -24,12 +28,19 @@
                 tbody
                   - @deposit_requests.each do |deposit_request|
                     tr
-                      td = deposit_request.id
-                      td = deposit_request.user.email
-                      td = deposit_request.user.ezid
-                      td = local_time deposit_request.created_at
-                      td = deposit_request.amount
-                      td = deposit_request.request_point
-                      td = deposit_request.status
-                      td 入金処理
-                      td 削除
+                      = form_for :deposit_record, url: admin_deposit_requests_path do |f|
+                        = f.hidden_field 'user_id', value: deposit_request.user.id
+                        = f.hidden_field 'deposit_request_id', value: deposit_request.id
+                        = f.hidden_field 'deposit_method', value: 1
+                        = f.hidden_field 'amount', value: deposit_request.amount
+                        = f.hidden_field 'add_point', value: deposit_request.request_point
+                        td = deposit_request.id
+                        td = deposit_request.user.email
+                        td = deposit_request.user.ezid
+                        td = local_time deposit_request.created_at
+                        td = deposit_request.amount
+                        td = deposit_request.request_point
+                        td = deposit_request.status
+                        / *確認のポップアップがでない
+                        td = f.submit '入金処理', class: 'btn btn-warning', data: {:confirm => '本当に入金処理を行ってもよろしいですか？'}
+                        td = link_to '削除', admin_deposit_request_path(deposit_request.id), class: 'btn btn-outline btn-warning', data: { confirm: '本当に削除してもよろしいですか？' }, method: :delete

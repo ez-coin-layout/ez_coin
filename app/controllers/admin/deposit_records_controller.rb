@@ -4,7 +4,7 @@ module Admin
 
 
     def index
-      @deposit_records = Admin::DepositRecord.all
+      @deposit_records = Admin::DepositRecord.order(created_at: :desc)
     end
 
 
