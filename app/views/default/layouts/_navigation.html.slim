@@ -5,3 +5,5 @@
         = link_to "ホーム", root_path
       li
         = mail_to "example@example.com", "お問い合わせ"
+      li
+        = link_to "Logout", default_sign_out_path, method: :delete

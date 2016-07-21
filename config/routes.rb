@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   namespace :default do
     get 'home/index'
     get 'action/index'
+    get    'sign_in'  => 'session#new'
+    post   'sign_in'  => 'session#create'
+    delete 'sign_out' => 'session#destroy'
   end
 
 
