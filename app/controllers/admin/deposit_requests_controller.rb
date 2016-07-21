@@ -7,10 +7,13 @@ module Admin
     end
 
     def create
-      @deposit_record = Admin::DepositRecord.new(deposit_params)
+      @deposit_record  = Admin::DepositRecord.new(deposit_params)
       @deposit_request = Default::DepositRequest.find(deposit_params[:deposit_request_id])
+      @user            = Default::User.find(deposit_params[:user_id])
       if @deposit_record.save
         @deposit_request.update_attribute(:status, true)
+        total = @user.total_point + deposit_params[:add_point].to_i
+        @user.update_attribute(:total_point, total)
         # *ここにメール送信内容を追加*
         redirect_to admin_deposit_requests_path
       else
