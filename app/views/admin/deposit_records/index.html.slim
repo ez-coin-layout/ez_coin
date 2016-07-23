@@ -25,8 +25,9 @@
                     tr
                       td = deposit_record.user.email
                       td = deposit_record.user.ezid
-                      td = deposit_record.amount
-                      td = deposit_record.add_point
+                      td.text-right = deposit_record.amount.to_s(:delimited) + " 円"
+                      td.text-right = deposit_record.add_point.to_s(:delimited) + " PT"
                       td = deposit_record.deposit_method
                       td = local_time deposit_record.created_at
-                      td = link_to 'Show', admin_deposit_record_path(deposit_record.id)
+                      - if deposit_record.deposit_method == "1"
+                        td = link_to 'Show', admin_deposit_record_path(deposit_record.id)

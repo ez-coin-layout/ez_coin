@@ -17,5 +17,5 @@
                 td = user.email
                 td = user.ezid
                 td = user.via_site
-                td = user.total_point
+                td.text-right = user.total_point.to_s(:delimited) + " PT"
                 td = local_time user.created_at

@@ -1,6 +1,6 @@
 module Admin
   class Admin::DepositRecordsController < BaseController
-    before_action :set_deposit_record, only: [:show]
+    before_action :set_deposit_record, only: :show
 
 
     def index

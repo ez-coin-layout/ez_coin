@@ -38,8 +38,8 @@
                         td = deposit_request.user.email
                         td = deposit_request.user.ezid
                         td = local_time deposit_request.created_at
-                        td = deposit_request.amount
-                        td = deposit_request.request_point
+                        td.text-right = deposit_request.amount.to_s(:delimited) + " 円"
+                        td.text-right = deposit_request.request_point.to_s(:delimited) + " PT"
                         td = deposit_request.status
                         / *確認のポップアップがでない
                         td = f.submit '入金処理', class: 'btn btn-warning', data: {:confirm => '本当に入金処理を行ってもよろしいですか？'}

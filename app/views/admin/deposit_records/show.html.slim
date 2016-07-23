@@ -1,21 +1,27 @@
-p#notice = notice
+  #page-wrapper
+    .row
+      .col-lg-12
+        h2.page-header 入金履歴
+    .row
+      .col-lg-12
+        .panel.panel-default
+          .panel-heading
+            | 処理した銀振申請
+          .panel-body
+            .table-responsive
+              table.table.table-striped
+                tbody
+                  tr
+                    th 申請日時
+                    td = @deposit_record.created_at
+                  tr
+                    th 申請金額
+                    td = @deposit_record.deposit_request.amount
+                  tr
+                    th 申請付与PT
+                    td = @deposit_record.deposit_request.request_point
+                  tr
+                    th 経由サイト
+                    td = @deposit_record.user.via_site
 
-p
-  strong User:
-  = @admin_deposit_record.user_id
-p
-  strong Deposit request:
-  = @admin_deposit_record.deposit_request_id
-p
-  strong Deposit method:
-  = @admin_deposit_record.deposit_method
-p
-  strong Amount:
-  = @admin_deposit_record.amount
-p
-  strong Add point:
-  = @admin_deposit_record.add_point
-
-= link_to 'Edit', edit_admin_deposit_record_path(@admin_deposit_record)
-'|
-= link_to 'Back', admin_deposit_records_path
+              = link_to 'Back', admin_deposit_records_path
