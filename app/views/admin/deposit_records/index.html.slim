@@ -29,5 +29,5 @@
                       td.text-right = deposit_record.add_point.to_s(:delimited) + " PT"
                       td = deposit_record.deposit_method
                       td = local_time deposit_record.created_at
-                      - if deposit_record.deposit_method == "1"
+                      - if deposit_record.deposit_method == "銀振り"
                         td = link_to 'Show', admin_deposit_record_path(deposit_record.id)

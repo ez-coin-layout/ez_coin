@@ -11,7 +11,7 @@ module Admin
       @deposit_request = Default::DepositRequest.find(deposit_params[:deposit_request_id])
       @user            = Default::User.find(deposit_params[:user_id])
       if @deposit_record.save
-        @deposit_request.update_attribute(:status, true)
+        @deposit_request.update_attribute(:status, "1")
         total = @user.total_point + deposit_params[:add_point].to_i
         @user.update_attribute(:total_point, total)
         DepositMailer.send_when_deposit(@user).deliver
