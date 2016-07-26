@@ -1,7 +1,7 @@
 module Default
-  class Default::ActionController < BaseController
+  class Default::EntranceController < BaseController
     skip_before_action :user_logged_in?
-
+    
     def index
     end
   end
