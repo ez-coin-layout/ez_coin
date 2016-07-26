@@ -1,19 +1,36 @@
-  .row
-    .col-lg-3
-    .col-lg-6.col-md-6
-      h1.page-header Dashboard
-      .panel.panel-primary
-        .panel-heading
-          .row
-            .col-xs-3
-              i.fa.fa-comments.fa-5x
-            .col-xs-9.text-right
-              .huge 26
-              div New Comments!
-        a href="#"
-          .panel-footer
-            span.pull-left View Details
-            span.pull-right
-              i.fa.fa-arrow-circle-right
-            .clearfix
-    .col-lg-3
+.row
+  .col-lg-3
+  .col-lg-6
+    .board
+      img src="/images/default/logo.png"
+    .panel.panel-yellow
+      .panel-heading
+        | EZ-coin  購入画面
+      /! /.panel-heading
+      .panel-body
+        b EZ-coinを取得するにはEZ-pointのご購入が必要となります。
+        br/
+        p 以下よりご入金方法をお選びください
+        p
+          = link_to new_default_deposit_request_path do
+              .btn.btn-primary.btn-lg.btn-block
+                i.fa.fa-bank 銀行振込で購入
+        p
+          button.btn.btn-primary.btn-lg.btn-block type="button"
+            i.fa.fa-credit-card
+            | クレジットカードで購入
+        br/
+        br/
+        p
+          | ・EZ-coinは1coin = 10円の暗号通貨です。
+          br/
+          | 固定レートですので変動リスクはありません。
+          br/
+          | ・EZ-pointを購入後、任意でEZ-coinへ変換することができますが、EZ-pointの有効期限は6ヶ月間となっておりますので、有効期限内にEZ-coinへご変換ください。
+        p
+          | ※有効期限を過ぎたEZ-pointはEZ-coinへの変換はできません。
+          br/
+          | ※EZ-coinに有効期限はございません。
+      /! /.panel-body
+      .panel-footer
+  .col-lg-3

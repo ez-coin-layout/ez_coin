@@ -4,7 +4,7 @@
 
 /vendor/bundle
 /.vagrant
-/Vagrantfile
+Vagrantfile
 .DS_Store
 .byebug_history
 /public/system
@@ -14,3 +14,5 @@ config/settings/*.local.yml
 config/environments/*.local.yml
 
 .bundle/
+
+public/assets/
