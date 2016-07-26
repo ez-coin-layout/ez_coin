@@ -1,15 +1,102 @@
 .row
   .col-lg-3
-  .col-lg-6.col-md-6
-    h1 New default_deposit_request
-
+  .col-lg-6
     = form_for @default_deposit_request do |f|
-      - if @default_deposit_request.errors.any?
-        #error_explanation
-          h2 = "#{pluralize(@default_deposit_request.errors.count, "error")} prohibited this default_deposit_request from being saved:"
-          ul
-            - @default_deposit_request.errors.full_messages.each do |message|
-              li = message
+      .board
+        img src="/images/default/logo.png" /
+      .panel.panel-yellow
+        .panel-heading
+          | 銀行振込確認画面
+        /! /.panel-heading
+        .panel-body
+          p
+            | 銀行振り込みでのご購入にあたり以下の5つをご確認の上、お振り込みください。
+            br/
+            | ※お振り込み手数料はお客様負担となります。※
+        .new-item
+          h4
+            | ご購入金額
+          h5
+            | 5000円
+        .new-item
+          h4
+            | ご利用アドレス
+          h5
+            | abcd@mail.com
+        .new-item
+          h4
+            | 会員番号
+          | 　　　　
+          .txet 123987
+          | 　　
+        | 　　
+        p
+          | 　 ※会員番号は必ず保管されてください
+          | 　　
+          br/
+          | 　万が一、紛失されますと振込の確認、及びポイントの利用が難しくなります。
+          | 　　
+        | 　　
+        .new-item
+          | 　　
+          h4 振込先
+          | 　　
+          p
+            | 金融機関名：イージー銀行
+            | 　　
+            br/
+            | 支店名：イージー支店
+            | 　
+            br/
+            | 口座番号：普通預金　0987654
+            br/
+            | 振込先名義人名：カ）イージーコイン
+            | 　　
+          | 　
+        div align="center"
+          | 　
+          h4 振込名義人には必ず
+          span style="color: #ff0000; transparent"
+            h3 123987あなたのお名前
+          p
+            | とご入力ください。
+          span style="color: #ff0000; transparent"
+            p
+              | 例：山田太郎様の場合
+              br/
+              | 123987 ヤマダタロウ
+        .new-item
+          h4
+            | お振り込み完了後
+        | 　
+        p
+          | お振込完了後、ご利用アドレス宛へ振込完了メールが届きますのでメール内のURLをクリックしてEZ-coinを取得してください。
+          | 　
+        | 　
+        .new-item
+          | 　　
+          h5
+            | 運営側でお振込内容の照合を行いますので、下記ボタンより申請を行ってください。
+            br
+            | ※こちらの申請によってお振込の完了とはなりませんのでご注意ください。
+          | 　　
+          button.btn.btn-primary.btn-lg.btn-block type="button"  申請する
+        p
+          | ※平日15時、土日祝日のお振込は翌営業日の確認となりますのでご了承ください。
+        button.btn.btn-outline.btn-warning style="width:100%;padding:10px;font-size:15px;" type="button"  お問合せ窓口はコチラ
+      /! /.panel-body
+      .panel-footer
+
+
+
+
+
+
+
+
+
+
+
 
       .field
         = f.label :user_id
