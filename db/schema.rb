@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160721093332) do
+ActiveRecord::Schema.define(version: 20160728073518) do
 
   create_table "admin_deposit_records", force: :cascade do |t|
     t.integer  "user_id",            limit: 4
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 20160721093332) do
     t.string   "authority",       limit: 255
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+  end
+
+  create_table "default_coin_records", force: :cascade do |t|
+    t.integer  "user_id",      limit: 4
+    t.integer  "change_point", limit: 4
+    t.integer  "coin_type",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "default_deposit_requests", force: :cascade do |t|

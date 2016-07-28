@@ -1,0 +1,34 @@
+.row
+  .col-lg-3
+  .col-lg-6
+    = form_for @default_change_coin, url: default_change_coin_index_path do |f|
+      .board
+        img src="/images/default/logo.png" /
+      .panel.panel-yellow
+        .panel-heading
+          | EZ-point → EZ-coin
+        .panel-body align="center"
+          p
+            | ご購入のEZ-pointを
+            br/
+            | EZ-coinに交換します。
+            br/
+            | よろしいですか？
+          .new-item
+            h5
+              | 交換EZ-point
+            h4.color-red 500 PT
+        .field
+          = f.label :user_id
+          = f.number_field :user_id, value: 1, required: true
+        .field
+          = f.label :change_point
+          = f.number_field :change_point, required: true
+        .field
+          = f.label :coin_type
+          = f.text_field :coin_type, value: "ez-coin", required: true
+        .actions = f.submit
+        button.btn.btn-primary.btn-lg.btn-block type="button"  交換
+        br
+        br
+        = link_to "EZ-point TOPへ", default_home_path, class: "btn btn-outline btn-warning btn-lg btn-block"

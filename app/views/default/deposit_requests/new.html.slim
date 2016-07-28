@@ -84,18 +84,17 @@
         p
           | ※平日15時、土日祝日のお振込は翌営業日の確認となりますのでご了承ください。
         = mail_to "example@example.com", "お問合せ窓口はコチラ", class: "btn btn-outline btn-warning btn-lg btn-block "
-      .panel-footer
 
 
       .field
         = f.label :user_id
-        = f.number_field :user_id,value:1, required: true
+        = f.number_field :user_id, value: 1, required: true
       .field
         = f.label :amount
         = f.number_field :amount, required: true
       .field
         = f.label :status
-        = f.text_field :status,value:"0", required: true
+        = f.text_field :status, value: false, required: true
       .field
         = f.label :request_point
         = f.number_field :request_point, required: true

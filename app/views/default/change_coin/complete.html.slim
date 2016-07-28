@@ -1,0 +1,27 @@
+.row
+  .col-lg-3
+  .col-lg-6
+    .board
+      img src="/images/default/logo.png" /
+    .panel.panel-yellow
+      .panel-heading
+        | 購入完了
+      .panel-body align="center"
+        b EZ-coinご購入が完了いたしました。
+        br/
+        br/
+        .new-item
+          h5
+            | 現在のEZ-coinの残高
+          h4.color-red 500 coin
+        p
+          | ご利用のサイトへ戻りポイント購入の画面にてご利用ください。
+        br/
+        p
+          | ※1coin = 10円となっております。
+          br/
+          | （変動リスクはございません）
+          br/
+          | ※EZ-IDはポイント購入の際にも必要となりますので大切に保管してください。
+      = link_to "EZ-point TOPへ", default_home_path, class: "btn btn-outline btn-warning btn-lg btn-block"
+  .col-lg-3

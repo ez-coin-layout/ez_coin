@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     get 'entrance' => 'entrance#index'
     resources :deposit_requests, only: [:new, :create]
     get    'deposit_request/complete'  => 'deposit_requests#complete'
+    resources :change_coin, only: [:new, :create]
+    get    'change_coin/complete'  => 'change_coin#complete'
     get    'sign_in'  => 'session#new'
     get    'sign_in'  => 'session#new'
     post   'sign_in'  => 'session#create'
