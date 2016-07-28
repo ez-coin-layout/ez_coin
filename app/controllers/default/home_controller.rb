@@ -3,8 +3,8 @@ module Default
     layout 'default/layouts/dashboard'
 
     def index
-      @deposit_records = Admin::DepositRecord.where(user_id: @current_user.id)
-      @coin_records    = Default::CoinRecord.where(user_id: @current_user.id)
+      @deposit_records = Admin::DepositRecord.where(user_id: @current_user.id).order(created_at: :desc)
+      @coin_records    = Default::CoinRecord.where(user_id: @current_user.id).order(created_at: :desc)
     end
   end
 end
