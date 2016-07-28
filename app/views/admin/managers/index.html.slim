@@ -2,24 +2,30 @@
     .row
       .col-lg-12
         h2.page-header 管理者一覧
-        table
-          thead
-            tr
-              th Username
-              th Authority
-              th
-              th
-              th
+    .row
+      .col-lg-12
+        .panel.panel-default
+          .panel-heading 管理者
+          .panel-body
+            .table-responsive
+              table.table
+                thead
+                  tr
+                    th Username
+                    th Authority
+                    th
+                    th
+                    th
 
-          tbody
-            - @admin_managers.each do |admin_manager|
-              tr
-                td = admin_manager.username
-                td = admin_manager.authority
-                td = link_to 'Show', admin_manager
-                td = link_to 'Edit', edit_admin_manager_path(admin_manager)
-                td = link_to 'Destroy', admin_manager, data: { confirm: 'Are you sure?' }, method: :delete
+                tbody
+                  - @admin_managers.each do |admin_manager|
+                    tr
+                      td = admin_manager.username
+                      td = admin_manager.authority
+                      td = link_to 'Show', admin_manager
+                      td = link_to 'Edit', edit_admin_manager_path(admin_manager)
+                      td = link_to 'Destroy', admin_manager, data: { confirm: 'Are you sure?' }, method: :delete
 
-        br
+              br
 
-        = link_to 'New Manager', new_admin_manager_path
+              = link_to 'New Manager', new_admin_manager_path

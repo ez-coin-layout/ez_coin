@@ -2,20 +2,25 @@
     .row
       .col-lg-12
         h2.page-header ユーザ一覧
-        table
-          thead
-            tr
-              th email
-              th 会員番号
-              th サイト
-              th 所持ポイント
-              th 登録日
-
-          tbody
-            - @users.each do |user|
-              tr
-                td = user.email
-                td = user.ezid
-                td = user.via_site
-                td.text-right = user.total_point.to_s(:delimited) + " PT"
-                td = local_time user.created_at
+    .row
+      .col-lg-12
+        .panel.panel-default
+          .panel-heading 登録ユーザ
+          .panel-body
+            .table-responsive
+              table.table
+                thead
+                  tr
+                    th email
+                    th 会員番号
+                    th サイト
+                    th 所持ポイント
+                    th 登録日
+                tbody
+                  - @users.each do |user|
+                    tr
+                      td = user.email
+                      td = user.ezid
+                      td = user.via_site
+                      td.text-right = user.total_point.to_s(:delimited) + " PT"
+                      td = local_time user.created_at
