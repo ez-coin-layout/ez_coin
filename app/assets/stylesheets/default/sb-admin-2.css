@@ -457,3 +457,7 @@ table.dataTable thead .sorting:after {
 .color-red {
   color: #d9534f;
 }
+
+.text-right {
+  text-align: right;
+}

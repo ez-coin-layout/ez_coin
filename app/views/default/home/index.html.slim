@@ -1,35 +1,46 @@
   #page-wrapper
     .row
       .col-lg-12
-        h1.page-header Dashboard
+        h1.page-header マイページ
     .row
-      .col-lg-3.col-md-6
-        .panel.panel-primary
-          .panel-heading
-            .row
-              .col-xs-3
-                i.fa.fa-comments.fa-5x
-              .col-xs-9.text-right
-                .huge 26
-                div New Comments!
-          a href="#"
-            .panel-footer
-              span.pull-left View Details
-              span.pull-right
-                i.fa.fa-arrow-circle-right
-              .clearfix
-      .col-lg-3.col-md-6
-        .panel.panel-green
-          .panel-heading
-            .row
-              .col-xs-3
-                i.fa.fa-tasks.fa-5x
-              .col-xs-9.text-right
-                .huge 12
-                div New Tasks!
-          a href="#"
-            .panel-footer
-              span.pull-left View Details
-              span.pull-right
-                i.fa.fa-arrow-circle-right
-              .clearfix
+      .col-lg-3
+        .form-group
+          label  現在の所持 EZ-point
+          input#disabledInput.text-right.form-control value="#{current_user.total_point} PT" disabled="disabled"
+    .row
+      .col-lg-6
+        .panel.panel-info
+          .panel-heading PT 購入履歴
+          .panel-body
+            .table-responsive
+              table.table.table-striped
+                thead
+                  tr
+                    th 購入日
+                    th 金額
+                    th PT
+                    th 決済方法
+                tbody
+                  - @deposit_records.each do |deposit_record|
+                    tr
+                      td = local_time deposit_record.created_at
+                      td.text-right = deposit_record.amount.to_s(:delimited) + " PT"
+                      td.text-right = deposit_record.add_point.to_s(:delimited) + " 円"
+                      td = deposit_record.deposit_method
+      .col-lg-6
+        .panel.panel-danger
+          .panel-heading coin 変換履歴
+          .panel-body
+            .table-responsive
+              table.table.table-striped
+                thead
+                  tr
+                    th 変換日
+                    th 変換PT
+                    th 変換coin
+                tbody
+                  - @coin_records.each do |coin_record|
+                    tr
+                      td = local_time coin_record.created_at
+                      td.text-right = coin_record.change_point.to_s(:delimited) + " PT"
+                      td = coin_record.coin_type
