@@ -31,7 +31,7 @@
                       = form_for :deposit_record, url: admin_deposit_requests_path do |f|
                         = f.hidden_field 'user_id', value: deposit_request.user.id
                         = f.hidden_field 'deposit_request_id', value: deposit_request.id
-                        = f.hidden_field 'deposit_method', value: 1
+                        = f.hidden_field 'deposit_method', value: "銀振り"
                         = f.hidden_field 'amount', value: deposit_request.amount
                         = f.hidden_field 'add_point', value: deposit_request.request_point
                         td = deposit_request.id

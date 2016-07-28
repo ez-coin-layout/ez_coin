@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(version: 20160721093332) do
   create_table "admin_deposit_records", force: :cascade do |t|
     t.integer  "user_id",            limit: 4
     t.integer  "deposit_request_id", limit: 4
-    t.string   "deposit_method",     limit: 255
+    t.integer  "deposit_method",     limit: 4
     t.integer  "amount",             limit: 4
     t.integer  "add_point",          limit: 4
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "admin_managers", force: :cascade do |t|
@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 20160721093332) do
   create_table "default_deposit_requests", force: :cascade do |t|
     t.integer  "user_id",       limit: 4
     t.integer  "amount",        limit: 4
-    t.string   "status",        limit: 255
+    t.integer  "status",        limit: 4
     t.integer  "request_point", limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "default_users", force: :cascade do |t|
