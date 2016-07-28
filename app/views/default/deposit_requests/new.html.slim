@@ -83,23 +83,22 @@
           button.btn.btn-primary.btn-lg.btn-block type="button"  申請する
         p
           | ※平日15時、土日祝日のお振込は翌営業日の確認となりますのでご了承ください。
-        button.btn.btn-outline.btn-warning style="width:100%;padding:10px;font-size:15px;" type="button"  お問合せ窓口はコチラ
-      /! /.panel-body
+        = mail_to "example@example.com", "お問合せ窓口はコチラ", class: "btn btn-outline btn-warning btn-lg btn-block "
       .panel-footer
 
 
       .field
         = f.label :user_id
-        = f.number_field :user_id
+        = f.number_field :user_id,value:1, required: true
       .field
         = f.label :amount
-        = f.number_field :amount
+        = f.number_field :amount, required: true
       .field
         = f.label :status
-        = f.text_field :status
+        = f.text_field :status,value:"0", required: true
       .field
         = f.label :request_point
-        = f.number_field :request_point
+        = f.number_field :request_point, required: true
       .actions = f.submit
 
     = link_to 'Back', default_deposit_requests_path
