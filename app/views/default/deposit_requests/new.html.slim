@@ -17,17 +17,12 @@
           h4
             | ご購入金額
           h5
-            | 5000円
-        .new-item
-          h4
-            | ご利用アドレス
-          h5
-            | abcd@mail.com
+            | 5000円 (500 PT)
         .new-item
           h4
             | 会員番号
           | 　　　　
-          .txet 123987
+          .txet = @user.ezid
           | 　　
         | 　　
         p
@@ -79,25 +74,16 @@
             | 運営側でお振込内容の照合を行いますので、下記ボタンより申請を行ってください。
             br
             | ※こちらの申請によってお振込の完了とはなりませんのでご注意ください。
-          | 　　
-          button.btn.btn-primary.btn-lg.btn-block type="button"  申請する
+
+            = f.hidden_field :user_id, value: "#{@user.id}"
+            = f.hidden_field :status, value: false
+          .field
+            = f.label :amount
+            = f.number_field :amount, required: true
+          .field
+            = f.label :request_point
+            = f.number_field :request_point, required: true
+          = f.button "申請する", class: 'btn btn-primary btn-lg btn-block'
         p
           | ※平日15時、土日祝日のお振込は翌営業日の確認となりますのでご了承ください。
         = mail_to "example@example.com", "お問合せ窓口はコチラ", class: "btn btn-outline btn-warning btn-lg btn-block "
-
-
-      .field
-        = f.label :user_id
-        = f.number_field :user_id, value: 1, required: true
-      .field
-        = f.label :amount
-        = f.number_field :amount, required: true
-      .field
-        = f.label :status
-        = f.text_field :status, value: false, required: true
-      .field
-        = f.label :request_point
-        = f.number_field :request_point, required: true
-      .actions = f.submit
-
-    = link_to 'Back', default_deposit_requests_path
