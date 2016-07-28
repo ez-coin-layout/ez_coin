@@ -17,18 +17,12 @@
           .new-item
             h5
               | 交換EZ-point
-            h4.color-red 500 PT
-        .field
-          = f.label :user_id
-          = f.number_field :user_id, value: 1, required: true
-        .field
-          = f.label :change_point
-          = f.number_field :change_point, required: true
-        .field
-          = f.label :coin_type
-          = f.text_field :coin_type, value: "ez-coin", required: true
-        .actions = f.submit
-        button.btn.btn-primary.btn-lg.btn-block type="button"  交換
-        br
+            h4.color-red
+              =< @change_user.total_point
+              |  PT
+          = f.hidden_field :user_id, value: "#{@change_user.id}", required: true
+          = f.hidden_field :change_point, value: "#{@change_user.total_point}", required: true
+          = f.hidden_field :coin_type, value: "ez-coin", required: true
+          = f.button "交換", class: 'btn btn-primary btn-lg btn-block'
         br
         = link_to "EZ-point TOPへ", default_home_path, class: "btn btn-outline btn-warning btn-lg btn-block"

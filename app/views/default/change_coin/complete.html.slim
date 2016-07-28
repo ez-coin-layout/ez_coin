@@ -12,8 +12,10 @@
         br/
         .new-item
           h5
-            | 現在のEZ-coinの残高
-          h4.color-red 500 coin
+            | 今回変換したEZ-coin
+          h4.color-red
+            =< @change_user.coin_records.last.change_point
+            |  coin
         p
           | ご利用のサイトへ戻りポイント購入の画面にてご利用ください。
         br/

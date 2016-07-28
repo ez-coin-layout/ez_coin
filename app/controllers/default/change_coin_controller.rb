@@ -1,6 +1,7 @@
 module Default
   class Default::ChangeCoinController < BaseController
     skip_before_action :user_logged_in?
+    before_action :set_change_user, only: [:new, :complete]
 
 
     def new
@@ -24,6 +25,12 @@ module Default
 
 
     private
+      def set_change_user
+        # 本番用、とりあえずuser_id 1　で情報を取得
+        # @change_user = Default::User.find(params[:id])
+        @change_user = Default::User.find(1)
+      end
+
       def change_coin_params
         params.require(:default_coin_record).permit(
           :user_id,
