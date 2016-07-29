@@ -26,8 +26,9 @@ module Default
 
     private
       def set_change_user
-        # 本番用、とりあえずuser_id 1　で情報を取得
-        # @change_user = Default::User.find(params[:id])
+        # 本番用
+        # @change_user = Default::User.find(params[:password_digest])
+        # とりあえずuser_id 1　で情報を取得
         @change_user = Default::User.find(1)
       end
 

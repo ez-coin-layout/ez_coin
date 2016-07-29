@@ -76,7 +76,7 @@
             | ※こちらの申請によってお振込の完了とはなりませんのでご注意ください。
 
             = f.hidden_field :user_id, value: "#{@user.id}"
-            = f.hidden_field :status, value: false
+            = f.hidden_field :status, value: "未処理"
           .field
             = f.label :amount
             = f.number_field :amount, required: true
