@@ -3,8 +3,9 @@
     ul#side-menu.nav
       li
         = link_to "ホーム", root_path
-      li
-        = link_to "coinへ変換", new_default_change_coin_path(id: current_user.id)
+      - if current_user.total_point > 0
+        li
+          = link_to "coinへ変換", new_default_change_coin_path(id: current_user.id)
       li
         = mail_to "example@example.com", "お問い合わせ"
       li

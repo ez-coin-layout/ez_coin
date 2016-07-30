@@ -36,7 +36,7 @@ module Default
         if user = Default::User.find_by( via_site: api_user_params[:transaction_identity], email: api_user_params[:email] )
           session[:amount] = api_user_params[:amount]
           session[:point] = api_user_params[:point]
-          redirect_to new_default_credit_new_path(id: user.id)
+          redirect_to new_default_credit_deposit_path(id: user.id)
         else
           ezid = SecureRandom.hex(4)
           @api_default_user = Dedault::User.new(
@@ -50,7 +50,7 @@ module Default
           if @api_default_user.save
             session[:amount] = api_user_params[:amount]
             session[:point] = api_user_params[:point]
-            redirect_to new_default_credit_new_path(id: @api_default_user.id)
+            redirect_to new_default_credit_deposit_path(id: @api_default_user.id)
           else
             render action: :index
           end
