@@ -1,17 +1,25 @@
+.loglogo
+  img src="/images/default/ezpointlogo.png" /
+.logtext
+  p
+    | User login page
+    br/
+    | EmailアドレスとEZ-IDを入力してください。
+.container
   .row
-    .col-lg-3
-    .col-lg-6.col-md-6
-        h2.page-header Login
-        = form_for(@user, url: default_sign_in_path, method: :post) do |f|
-          - if flash[:error]
-            #error_explanation
-              p ユーザー名またはパスワードが違います
-          = hidden_field_tag :referer, flash[:referer]
-          .field
-            = f.label :email
-            = f.text_field :email
-          .field
-            = f.label :password
-            = f.password_field :password
-          .actions
-            = f.submit
+    .col-md-4.col-md-offset-4
+      .login-panel.panel02.panel-default
+        .panel-heading01
+          h3.panel-title EZ-pointログイン画面
+        .panel-body
+          = form_for(@user, url: default_sign_in_path, method: :post) do |f|
+            - if flash[:error]
+              #error_explanation
+                p メールアドレスまたはEZ-IDが違います
+            fieldset
+              = hidden_field_tag :referer, flash[:referer]
+              .form-group
+                = f.email_field :email, autofocus: true, placeholder: "E-mail", class: 'form-control'
+              .form-group
+                = f.password_field :password, placeholder: "EZ-ID", class: 'form-control'
+              = f.button "ログイン", class: 'btn btn-lg btn-success01 btn-block'

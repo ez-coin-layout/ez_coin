@@ -211,7 +211,7 @@ body {
 }
 
 .login-panel {
-    margin-top: 25%;
+    margin-top: 3%;
 }
 
 .flot-chart {
@@ -378,4 +378,33 @@ table.dataTable thead .sorting:after {
 
 .text-left {
   text-align: left;
+}
+
+.loglogo{
+    text-align: center;
+    padding-top: 50px;
+
+}
+
+.logtext{
+    text-align: center;
+    margin-top: 35px;
+    font-size: 15px;
+}
+
+.panel-default>.panel-heading02 {
+    color: #333;
+    background-color: #337ab7;
+    border-color: #ddd;
+    padding: 10px 35px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    text-align: center;
+}
+
+.btn-success01 {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
 }
