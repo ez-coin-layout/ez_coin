@@ -31,7 +31,11 @@ module Default
         # @change_user = Default::User.find_by_password_digest(params[:password_digest])
         # とりあえずuser_id 1　で情報を取得
         # @change_user = Default::User.find(1)
-        @change_user = Default::User.find_by_password_digest(params[:password_digest])
+        if params[:password_digest].nil?
+          @change_user = Default::User.find(params[:id])
+        else
+          @change_user = Default::User.find_by_password_digest(params[:password_digest])
+        end
       end
 
       def change_coin_params
