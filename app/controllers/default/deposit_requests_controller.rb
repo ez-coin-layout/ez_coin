@@ -25,8 +25,8 @@ module Default
 
     private
       def set_user
-        # @change_user = Default::User.find(params[:id])
-        @user = Default::User.find(1)
+        @user = Default::User.find(params[:id])
+        # @user = Default::User.find(1)
       end
       def default_deposit_request_params
         params.require(:default_deposit_request).permit(

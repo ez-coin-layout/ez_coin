@@ -14,7 +14,7 @@
           h5
             | 今回変換したEZ-coin
           h4.color-red
-            =< @change_user.coin_records.last.change_point
+            =< @user.coin_records.last.change_point
             |  coin
         p
           | ご利用のサイトへ戻りポイント購入の画面にてご利用ください。
@@ -25,5 +25,5 @@
           | （変動リスクはございません）
           br/
           | ※EZ-IDはポイント購入の際にも必要となりますので大切に保管してください。
-      = link_to "EZ-point TOPへ", default_home_path, class: "btn btn-outline btn-warning btn-lg btn-block"
+      = link_to "EZ-point TOPへ", default_sign_in_path, class: "btn btn-outline btn-warning btn-lg btn-block"
   .col-lg-3

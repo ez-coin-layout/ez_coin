@@ -21,7 +21,7 @@
     お客様からのお振込の確認が取れましたので、EZ-pointに反映いたしました。
     <br>
     <br>
-    <%= link_to 'こちら', new_default_change_coin_path(id: @user.password_digest) %>よりEZ-coinへの変換を行ってください。
+    <%= link_to 'こちら', new_default_change_coin_path(password_digest: @user.password_digest) %>よりEZ-coinへの変換を行ってください。
   </p>
   <hr />
 </body>

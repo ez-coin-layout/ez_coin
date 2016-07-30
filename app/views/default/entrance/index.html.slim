@@ -8,29 +8,36 @@
         | EZ-coin  購入画面
       /! /.panel-heading
       .panel-body
-        b EZ-coinを取得するにはEZ-pointのご購入が必要となります。
-        br/
-        p 以下よりご入金方法をお選びください
-        p
-          = link_to new_default_deposit_request_path do
-              .btn.btn-primary.btn-lg.btn-block
-                i.fa.fa-bank 銀行振込で購入
-        p
-          button.btn.btn-primary.btn-lg.btn-block type="button"
-            i.fa.fa-credit-card
-            | クレジットカードで購入
-        br/
-        br/
-        p
-          | ・EZ-coinは1coin = 10円の暗号通貨です。
+        = form_for :entrance, url: default_entrance_path do |f|
+          = f.hidden_field :token
+          = f.hidden_field :transaction_identity
+          = f.hidden_field :email
+          = f.hidden_field :amount
+          = f.hidden_field :point
+          b EZ-coinを取得するにはEZ-pointのご購入が必要となります。
           br/
-          | 固定レートですので変動リスクはありません。
+          p 以下よりご入金方法をお選びください
+          p
+            / = link_to new_default_deposit_request_path do
+                .btn.btn-primary.btn-lg.btn-block
+                  i.fa.fa-bank 銀行振込で購入
+            = f.submit "銀行振込で購入", name: "bank_deposit", class: 'btn btn-primary btn-lg btn-block'
+          p
+            button.btn.btn-primary.btn-lg.btn-block type="button"
+              i.fa.fa-credit-card
+              | クレジットカードで購入
+            / = f.submit "クレジットカードで購入", name: "credit_deposit", class: 'btn btn-primary btn-lg btn-block'
           br/
-          | ・EZ-pointを購入後、任意でEZ-coinへ変換することができますが、EZ-pointの有効期限は6ヶ月間となっておりますので、有効期限内にEZ-coinへご変換ください。
-        p
-          | ※有効期限を過ぎたEZ-pointはEZ-coinへの変換はできません。
           br/
-          | ※EZ-coinに有効期限はございません。
-      /! /.panel-body
+          p
+            | ・EZ-coinは1coin = 10円の暗号通貨です。
+            br/
+            | 固定レートですので変動リスクはありません。
+            br/
+            | ・EZ-pointを購入後、任意でEZ-coinへ変換することができますが、EZ-pointの有効期限は6ヶ月間となっておりますので、有効期限内にEZ-coinへご変換ください。
+          p
+            | ※有効期限を過ぎたEZ-pointはEZ-coinへの変換はできません。
+            br/
+            | ※EZ-coinに有効期限はございません。
       .panel-footer
   .col-lg-3

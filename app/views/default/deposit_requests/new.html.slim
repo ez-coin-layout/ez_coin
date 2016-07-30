@@ -7,7 +7,6 @@
       .panel.panel-yellow
         .panel-heading
           | 銀行振込確認画面
-        /! /.panel-heading
         .panel-body
           p
             | 銀行振り込みでのご購入にあたり以下の5つをご確認の上、お振り込みください。
@@ -17,7 +16,8 @@
           h4
             | ご購入金額
           h5
-            | 5000円 (500 PT)
+            =< "#{session[:amount]} 円 "
+            = " (#{session[:point]} PT)"
         .new-item
           h4
             | 会員番号
@@ -77,12 +77,8 @@
 
             = f.hidden_field :user_id, value: "#{@user.id}"
             = f.hidden_field :status, value: "未処理"
-          .field
-            = f.label :amount
-            = f.number_field :amount, required: true
-          .field
-            = f.label :request_point
-            = f.number_field :request_point, required: true
+            = f.hidden_field :amount, value: "#{session[:amount]}"
+            = f.hidden_field :request_point, value: "#{session[:point]}"
           = f.button "申請する", class: 'btn btn-primary btn-lg btn-block'
         p
           | ※平日15時、土日祝日のお振込は翌営業日の確認となりますのでご了承ください。
