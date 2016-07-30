@@ -2,8 +2,10 @@ Rails.application.routes.draw do
 
 
   namespace :default do
-    get 'home'     => 'home#index'
-    get 'entrance' => 'entrance#index'
+    get  'home'     => 'home#index'
+    # get  'entrance' => 'entrance#index'
+    get  'entrance(:api_user)' => 'entrance#index'
+    post 'entrance'            => 'entrance#check'
     resources :deposit_requests, only: [:new, :create]
     get    'deposit_request/complete'  => 'deposit_requests#complete'
     resources :credit_deposit, only: [:new, :create]

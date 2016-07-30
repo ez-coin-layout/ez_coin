@@ -6,13 +6,16 @@ module Default
     def new
     end
 
+    def create
+    end
+
     def complete
+      @user = Default::User.find(params[:id])
     end
 
     private
       def set_user
-        # @change_user = Default::User.find(params[:id])
-        @user = Default::User.find(1)
+        @change_user = Default::User.find(params[:id])
       end
   end
 end

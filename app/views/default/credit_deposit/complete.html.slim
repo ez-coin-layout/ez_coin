@@ -1,2 +1,24 @@
-h1 Default::CreditDeposit#complete
-p Find me in app/views/default/credit_deposit/complete.html.slim
+.row
+  .col-lg-3
+  .col-lg-6
+    .board
+      img src="/images/default/logo.png" /
+    .panel.panel-yellow
+      .panel-heading
+        | クレジット決済完了
+      .panel-body align="center"
+        b クレジットカードによるご購入が正常に完了いたしました。
+        br/
+        br/
+        .new-item
+          h5
+            | 購入したEZ-point
+          h4.color-red
+            =< @user.total_point
+            |  point
+        p
+          | 以下のボタンより、EZ-pointをcoinへ変換してください。
+        br/
+        p
+      = link_to "EZ-coinへ変換", new_default_change_coin_path(id: @user.id), class: "btn btn-outline btn-warning btn-lg btn-block"
+  .col-lg-3
