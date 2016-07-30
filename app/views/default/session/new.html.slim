@@ -15,7 +15,7 @@
           = form_for(@user, url: default_sign_in_path, method: :post) do |f|
             - if flash[:error]
               #error_explanation
-                p ユーザー名またはパスワードが違います
+                p メールアドレスまたはEZ-IDが違います
             fieldset
               = hidden_field_tag :referer, flash[:referer]
               .form-group
