@@ -39,7 +39,7 @@ module Default
           redirect_to new_default_credit_deposit_path(id: user.id)
         else
           ezid = SecureRandom.hex(4)
-          @api_default_user = Dedault::User.new(
+          @api_default_user = Default::User.new(
             ezid: ezid,
             email: api_user_params[:email],
             password: ezid,

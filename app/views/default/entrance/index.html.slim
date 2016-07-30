@@ -22,11 +22,7 @@
                 .btn.btn-primary.btn-lg.btn-block
                   i.fa.fa-bank 銀行振込で購入
             = f.submit "銀行振込で購入", name: "bank_deposit", class: 'btn btn-primary btn-lg btn-block'
-          p
-            button.btn.btn-primary.btn-lg.btn-block type="button"
-              i.fa.fa-credit-card
-              | クレジットカードで購入
-            / = f.submit "クレジットカードで購入", name: "credit_deposit", class: 'btn btn-primary btn-lg btn-block'
+            = f.submit "クレジットカードで購入", name: "credit_deposit", class: 'btn btn-primary btn-lg btn-block'
           br/
           br/
           p

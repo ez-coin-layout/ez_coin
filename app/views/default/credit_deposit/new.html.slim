@@ -1,2 +1,48 @@
-h1 Default::CreditDeposit#index
-p Find me in app/views/default/credit_deposit/index.html.slim
+.row
+  .col-lg-3
+  .col-lg-6
+    .board
+      img src="/images/default/logo.png" /
+    .panel.panel-yellow
+      .panel-heading
+        | クレジットカード決済
+      .row
+        .col-md-12
+          .panel-body align="center"
+            b EZ-coinのご購入を下記より行ってください。
+            br/
+            br/
+            p カード情報のご入力をお願いします。
+            .row
+              .col-md-12
+                label for="card_number"  カード番号
+                input#card_number.text_field.form-control name="[card_number]" placeholder="1111222233334444" type="text" /
+                | 　
+            .row
+              .col-md-6
+                .form-group
+                  label for="name_first"  名
+                  input#name_first.text_field.form-control name="[name_first]" placeholder="TARO" type="text" /
+              .col-md-6
+                .form-group
+                  label for="name_last"  姓
+                  input#name_last.text_field.form-control name="[name_last]" placeholder="YAMADA" type="text" /
+            .row
+              .col-md-6
+                .form-group
+                  label for="name_first"  有効期限（月）
+                  input#expire_month.text_field.form-control name="[expire_month]" placeholder="01" type="text" /
+              .col-md-6
+                .form-group
+                  label for="name_last"  有効期限（年）
+                  input#expire_year.text_field.form-control name="[expire_year]" placeholder="26" type="text" /
+            .row
+              .col-md-6 class=".col-md-offset-6"
+                .form-group
+                  label for="wallet_creditcard_deposit_request_cvv2"  CVV ( カード裏面右端3桁 )
+                  input#request_cvv2.text_field.form-control name="[cvv2]" type="text" /
+            button.btnnew.btn-danger type="button"  決済実行
+            .p-text
+              p 必ずご確認をお願いします。決済完了後は取り消すことが出来ません。
+            button.btn.btn-outline.btn-warning.btnsize01 style="width:20%;padding:5px;font-size:15px;" type="button"  戻る
+        .col-lg-3
